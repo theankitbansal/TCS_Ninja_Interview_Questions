@@ -238,3 +238,5 @@ Application Layer: It manages the standards for user interfaces and is responsib
 Transport Layer: It is in charge of ensuring a seamless end-to-end connection and error-free data transfer.
 Internet Layer: It specifies the protocols that control the logical transmission of data throughout the whole network.
 Network Access Layer: The protocols available in this layer enable the physical transport of data while keeping an eye out for hardware addressing.
+
+![image](https://user-images.githubusercontent.com/81725794/183565393-37bfb61b-4ce0-41b7-ae6a-0cd265525f50.png)
