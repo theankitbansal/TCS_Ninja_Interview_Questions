@@ -118,3 +118,56 @@ class Example {
 }
 
 9. Explain Insertion sort?
+
+Insertion Sort is a comparison-based sorting algorithm. In each iteration of insertion sort, it picks one element from the unsorted side and finds the current place for it on the sorted side of the list. It works similarly to card sorting.
+
+It is adaptive in nature.
+
+// Insertion sort code in Java
+// This sorting algorithm will sort the array in ascending order
+import java.util.Arrays;
+class InsertionSort {
+ void sort(int arr[]) {
+   int sizeOfArray = arr.length;
+   for (int i= 1; i< sizeOfArray ; i++) {
+     int key = arr[i];
+     int j = i- 1;
+     while (j >= 0 && temp < arr[j]) {
+       arr[j + 1] = arr[j];
+       --j;
+     }
+     arr[j + 1] = temp;
+   }
+ }
+ // Driver code
+ public static void main(String args[]) {
+   int[] unSortedArray = { 12, 10, 31, 4, 13 };
+   InsertionSort s = new InsertionSort();
+   s.sort(unSortedArray);
+   System.out.println("Sorted Array: ");
+   System.out.println(Arrays.toString(unSortedArray));
+ }
+}
+Time Complexity:
+
+The worst case of insertion sort will be when the given list is in descending order and the time complexity will be O(n^2).
+The average case time complexity of the insertion sort will also be O(n^2).
+The best case of Insertion Sort will be when the list is sorted in Ascending order and the time complexity will be O(n).
+Space Complexity: Space complexity will be O(1).
+
+10. What is a linked list explain with an example?
+
+A linked list is a linear data structure. Unlike a conventional sequential data structure, a linked list maintains its elements at non-contiguous memory locations. A linked list is composed of nodes interconnected by pointers. A node in the Linked List consists of two parts: data and a pointer. The pointer points to the next node in the list.
+
+The head always points to the first node of the linked list, and the last node will always point to null.
+
+Example: music or video player, next and previous buttons in the browser.
+
+Types of Linked List:
+
+Singly Linked List.
+Doubly Linked List.
+Circular Linked List.
+
+11. What is an operating system?
+
