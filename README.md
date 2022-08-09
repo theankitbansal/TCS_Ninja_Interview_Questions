@@ -171,3 +171,70 @@ Circular Linked List.
 
 11. What is an operating system?
 
+An OS acts as the bridge between a computer's users and its hardware. The goal of an OS is to offer a setting where a user may conveniently and effectively run a program. The distribution of services and resources, including memory, processors, hardware, and data, maybe a responsibility of an operating system. Programs sort of a traffic controller, a scheduler, a memory management module, I/O programs, and a filing system are among the operating system's programs that are responsible for managing these resources.
+
+12. What is a firewall? How does it work?
+
+A firewall is a network protection system that regulates internet traffic coming into, leaving, and inside a private network. Firewalls may be thought of as controlled borders or portals that control the flow of authorized and restricted web traffic in a private network. The phrase derives from the notion of physical walls acting as barriers to impede the spread of fire until emergency personnel can extinguish it. Similarly, network security firewalls are used for online traffic control, often to slow the spread of web dangers.
+
+How a firewall works:
+
+Based on a set of pre-established rules, a firewall system examines network traffic. Following that, it filters the traffic to stop any of that traffic from originating from untrustworthy or unreliable sources. Only inbound traffic that is set to accept is permitted.
+
+13. What is the stack data structure and its operations?
+
+The Last In First Out (LIFO) concept is used by stacks, which are dynamic data structures. The first thing to be removed from a stack is the last thing that was added to it. The addition and removal of items are limited in stacks. Only one end of the stack, i.e., the top, can have items added or removed. The top item is the one at the very top. Push() and pop() are the names of the operations that add and remove items, respectively.
+
+Some common operations used on stacks include the following:
+
+push(): Push operation is used to insert an item at the top of the stack.
+pop(): Pop operation is used to remove the element from the top of the stack.
+isEmpty(): This method is used to know if the stack is empty or not.
+isFull(): This method is used to know if the stack is full or not.
+peek(): This method returns the element at any given index in the stack.
+
+14. What is a constructor in java?
+
+A class's member function with the same name as the class is the constructor.
+
+The initialization of objects belonging to a class is done by a particular kind of member function called a constructor. When an object (a class instance) is formed, the constructor is automatically invoked.
+
+A constructor does not have a return type.
+
+Virtual constructors are not a thing; only member functions can be virtual.
+
+Types of Constructors in Java:
+
+No-argument Constructor: A constructor with no parameter is called a no-argument or default constructor. If a constructor is not defined in a class then the compiler automatically creates a default constructor.
+Example:
+Class Interviewbit {
+Int num1, num2;
+    Interviewbit(){
+    num1 = 20;
+    num2 = 30;
+    {
+}
+Interviewbit ib =new Interviewbit();
+Parameterized Constructor: Parameterized constructors are constructors that take parameters. Use a parameterized constructor if you wish to initialize class fields with your values.
+Example:
+Class Interviewbit {
+Int num1, num2;
+    Interviewbit(int num1, int num2){
+    this.num1 = num1;
+    this.num2 = num2;
+    {
+}
+Interviewbit ib =new Interviewbit();
+
+15. Explain the TCP/IP model?
+
+TCP/IP stands for Transmission Control Protocol/Internet Protocol. It assists us in figuring out the best way to connect a particular computer to the internet and the best way to transfer data between them. When several computer networks are linked together, we can more easily establish a virtual network. To enable communication across large distances, the TCP/IP protocol was created.
+
+It is a connection-oriented protocol.
+
+Layers in the TCP/IP model: There are four layers in the TCP model:
+
+Application Layer: It manages the standards for user interfaces and is responsible for node-to-node communication.
+Transport Layer: It is in charge of ensuring a seamless end-to-end connection and error-free data transfer.
+Internet Layer: It specifies the protocols that control the logical transmission of data throughout the whole network.
+Network Access Layer: The protocols available in this layer enable the physical transport of data while keeping an eye out for hardware addressing.
