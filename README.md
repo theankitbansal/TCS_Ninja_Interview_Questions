@@ -240,3 +240,86 @@ Internet Layer: It specifies the protocols that control the logical transmission
 Network Access Layer: The protocols available in this layer enable the physical transport of data while keeping an eye out for hardware addressing.
 
 ![image](https://user-images.githubusercontent.com/81725794/183565393-37bfb61b-4ce0-41b7-ae6a-0cd265525f50.png)
+
+16. What is cloud computing?
+
+The term "cloud computing" refers to the storage and access of data and computing services via the internet. It does not save any information on your computer. It refers to the on-demand availability of computer services such as servers, data storage, networking, and databases. The primary goal of cloud computing is to provide numerous users with access to data centers. Users can also gain access to data stored on a distant server.
+
+Cloud computing reduces the user's hardware and software requirements. The only program that the user needs to be able to operate is the cloud computing platforms interface software, which can be as simple as a Web browser, and the Cloud network handles the rest. We have all encountered cloud computing at some point in our lives; some of the major cloud services we have used or continue to use include mail services such as Gmail, Hotmail, and yahoo, among others.
+
+Example: AWS, Azure, Google.
+
+17. What is Machine Learning?
+
+Machine Learning is a collection of computer algorithms that can learn from examples and improve themselves without being explicitly programmed by a person. Machine learning is an artificial intelligence component that integrates data with statistical methods to predict an output that can be utilized to produce actionable insights. A common machine learning challenge is to make a recommendation. For individuals who have a Netflix account, all movie or series recommendations are based on the user's past data. Unsupervised learning is being used by tech companies to improve the customer experience by personalizing recommendations.
+
+Machine learning is also utilized for tasks such as fraud detection, predictive maintenance, portfolio optimization, task automation, and so on.
+
+TCS Ninja Coding Questions
+
+18. Write a Program to print the Half Pyramid Number Pattern?
+Pattern: 
+
+1
+22
+333
+4444
+55555
+Code:
+
+class PyramidPattern{
+   public static void main(String[] args) {
+       //to control how many rows we have to print
+       int noOfRows=5;
+       for(int num=1;num<=noOfRows;++num){
+           for(int j=1;j<=num;++j){
+               System.out.print(num);
+           }
+           System.out.println();
+       }
+   }
+}
+
+We have used nested loops to print the pattern. The outer loop is used to control the no of rows we want to print and what number will be printed on each row. An inner loop is used to control the number of types that number will be printed. 
+
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+
+19. Write a program to print the left triangle start pattern?
+
+          * 
+        * * 
+      * * * 
+    * * * * 
+  * * * * *
+
+Code:
+
+public class LeftTrianglePattern
+{
+public static void main(String[] args) {
+ int i=0,noOfRows=5,j;
+       for(; i<noOfRows; i++)
+       { 
+           //Inner loop1
+           for(j=2*(noOfRows-i); j>=0; j--)
+           {           
+               System.out.print(" ");
+           } 
+           //Inner loop2
+           for(j=0; j<=i; j++)
+           {       
+               System.out.print("* ");
+           }           
+           System.out.println();
+       } 
+}
+}
+An outer loop will run to control the number of rows to print. Inner loop1 will control the number of spaces before the pattern in each row. Inner loop2 will print the * in each row after the space.
+
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+
+20. Write a program to check if a number is prime or not?
+
+A number is said to be the prime number if it is divisible by itself or 1. If the number is divisible by any other number then it is not a prime number.
