@@ -323,3 +323,147 @@ Space Complexity: O(1)
 20. Write a program to check if a number is prime or not?
 
 A number is said to be the prime number if it is divisible by itself or 1. If the number is divisible by any other number then it is not a prime number.
+
+Code:
+
+public class Main {
+   static boolean primeNumberChecker(int number){
+       int i = 2;
+       boolean flag = false;
+       while (i <= number / 2) {
+         //Check if number is divisible by i
+         if (number % i == 0) {
+           //set flag to true and breakout of the loop
+           flag = true;
+           break;
+         }
+         i++;
+       }
+       if (!flag)
+         return true;
+       else
+        return false;
+   }
+ public static void main(String[] args) {
+   int numberToCheck = 11;
+   //Call the function and store the result
+   boolean result = primeNumberChecker(numberToCheck);
+   //Check if result is true then number is prime
+   if (result)
+     System.out.println(numberToCheck + " is a prime number.");
+   else
+     System.out.println(numberToCheck + " is not a prime number.");
+ }
+}
+Take a boolean variable as and set it to by default false.
+
+Start the loop from 2 because a number is always divisible by 1.
+
+Now check if the number is divisible by any other number.
+
+If the number is divisible by the other number then set the flag variable as true and break the loop.
+
+Now check if a flag is true means the number is not a prime number.
+
+Time Complexity: Loop is running only half times of number so the time complexity would be O(n).
+Space Complexity: O(1)
+
+21. Write a recursive function to print the factorial of a number?
+
+The definition of a factor of a number n is the multiplication of all positive descending integers; the factor of n is represented by the symbol n!.
+
+Code:
+
+public class Factorial{
+   static long factorial(int number){
+      //Base condition when recursive call will stop
+       if(number==0 || number == 1)
+           return 1;
+       return number * factorial(number-1);
+   }
+ public static void main(String[] args) {
+   //Number to calculate factorial
+   int number = 10;
+  System.out.println(factorial(number));
+ }
+}
+Time Complexity: Time complexity would be O(n).
+Space Complexity: In each recursive call, it uses stack internally so space complexity would be O(n).
+
+22. Write a program to check if there exist a duplicate key in the array?
+
+import java.util.*;
+class Duplicate {
+   public static boolean checkDuplicate(int[] arr) {
+       // create a hashmap to store the occurrence of the number
+       Map<Integer,Integer> container = new HashMap<>();
+      //Loop through the array
+       for(int i=0;i<arr.length;i++){
+           //Check if number already exist in the hashmap
+           if(container.containsKey(arr[i])){
+               return true;
+           }
+           else
+               container.put(arr[i],1);
+       }
+       return false;
+   }
+   public static void main(String[] args){
+       //Input array
+       int []arr = {10,20,30,40,10};
+       System.out.println(checkDuplicate(arr));
+   }
+}
+Output:
+
+true
+To solve this problem we will use the HashMap. First, we will check if the key exists in the map or not if it exists means there is a duplicate key in the array. If the key does not exist in the array then we will put the key in the array with value 1. Keep doing this till the last element of the array.
+
+If key exists return false otherwise return true.
+
+Time Complexity: Time complexity would be O(n).
+Space Complexity: We are using additional space to keep a count of the occurrence of each number so space complexity would be O(n).
+
+23. Write a program to calculate the sum of diagonal of a matrix?
+
+Include only the total of the primary diagonal elements and the secondary diagonal elements that are not a part of the primary diagonal.
+
+class Solution {
+   public static int diagonalSum(int[][] matrix) {
+       int row=0,col,leftSum=0,rightSum=0,n=matrix.length;
+       col=n-1;
+       while(row<n){
+          //Calculate sum of left diagonal
+           leftSum += matrix[i][i];
+           //Check if row and column are not same 
+           if(row!=col)
+               //Calculate the sum of right diagonal
+               rightSum += matrix[i][j];
+               //update row and col
+           row++;
+           col--;
+       }
+       return (leftSum + rightSum);
+   }
+   public static void main(String []args){
+       //Input matrix
+       int [][]matrix = {{10,20,30},
+                     {40,50,60},
+                     {70,80,90}};
+       int result = diagonalSum(matrix);
+       System.out.println(result);
+   }
+}
+Output:
+
+250
+Take two variables to store the sum of the left and right diagonal.
+
+Take two pointers row, col to traverse the matrix. If row and col are equal then we have to add that element only once either in leftSum or rightSum.
+
+Time Complexity: O(n), as we are running a loop to n times.
+Space Complexity: O(1)
+
+24. Write a program to check if given number is palindrome or not?
+
+When a number reads the same both forward and backward, it is a palindrome.
