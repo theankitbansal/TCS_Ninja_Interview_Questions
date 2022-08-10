@@ -467,3 +467,140 @@ Space Complexity: O(1)
 24. Write a program to check if given number is palindrome or not?
 
 When a number reads the same both forward and backward, it is a palindrome.
+
+Example: 232 is a palindrome while 233 is not.
+
+class Palindrome {
+   public static boolean checkPalindrome(int number) {
+      //Check if number is zero
+       if (number < 0) {
+           return false;
+       }
+      //To store the remaining number after each iteration
+       int remain = number;
+       int reversNumber = 0;
+       while (remain != 0) {
+          //Extract last digit and add to the reversed number
+           reversNumber = reversNumber * 10 + remain % 10;
+           //Update the remaining number
+           remain /= 10;
+       }
+       return number == reversNumber;
+   }
+   public static void main(String []args){
+       //Input number
+       int number = 123;
+       boolean result = checkPalindrome(number);
+       System.out.println(result);
+   }
+}
+Output:
+
+true
+Take two-variable remain and reverseNumber initially copy the number into the remaining variable. Start a loop till the remains become zero.
+
+Extract the last digit of the number using the modulus operator and then add it to the reverseNumber. Now update the remaining number. When the remaining is zero comes out of the loop and checks if the number and reverseNumber are strictly equal then returns true otherwise returns false.
+
+Time Complexity: O(n), where n is the number of digits in the given number.
+Space complexity: O(1), as we are only using a single variable to store reversed numbers.
+
+25. Write a program to find the missing element in an array?
+
+We are given an array ranging from 1 to N-1. One of the number is missing from the array the task is to find that number. There is no repeating number in the array.
+
+class MissingNumber {
+   public static int missingNumber(int[] arr) {
+       int i=0,n=arr.length+1;
+       //Calculate sum of n natural numbers and store it
+       int sum=0,sumOfNatural=n*(n-1)/2;
+      //Loop through the array and calculate the sum of the elements of the array
+       for(i=0;i<n-1;i++){
+           sum+=arr[i];
+       }
+      //Return the difference of both
+       return sumOfNatural - sum;
+   }
+   public static void main(String []args){
+      //Input array
+       int []arr = {3,4,2,0,1,6};
+       int result = missingNumber(arr);
+       System.out.println(result);
+   }
+}
+Output:
+
+5
+Calculate the sum of the first N natural number. Traverse the array using a loop and calculate its sum and store it in the variable named sum.
+Return the difference of the sum of natural number and sum.
+
+Time Complexity: O(n), we are only iterating through the array.
+Space Complexity: O(1)
+
+26. Write a program to print fibonacci series?
+
+The Fibonacci sequence is a collection of integers (the Fibonacci numbers) that goes from 0 to 1, then 1, then 1, then a series of numbers that increase continuously after that. In the series, each number is equal to the sum of the two numbers that came before it.
+
+public class FibanacciSeries
+{
+   public static void main(String []args){
+     int e1 = 0, e2 = 1, nextElement = 0;
+     int range=100;
+     // print the first two element of fibonacci which is 0 and 1
+     System.out.print(e1 + "," +e2);
+     //Initially nextElement will be the third element in the series
+     nextElement = e1 + e2;
+    //Run loop till nextElement is equal to range
+     while (nextElement <= range) {
+      //Print the next element in the series
+       System.out.print(","+nextElement);
+       //Update e1 by assigning e2 to it
+       e1 = e2;
+       //Update e2 by assigning nextElement to it
+       e2 = nextElement;
+       nextElement = e1 + e2;
+     }
+   }
+}
+In the Fibonacci series, we have to focus on three numbers because the next number in the series will be the addition of two preceding numbers.
+
+Take three variables initially the first(e1) and second(e2) will be 0 and 1. In the third variable(nextElement) we will store the next element in the series.
+
+So start a loop upto the range and in iteration do this, replace e1 with e2(e1=e2) and e2 with nextElement(e2=nextElement) and then in nextElement store the sum of e1 and e2.
+
+Time Complexity: O(n), as the loop runs only from 1 to n.
+Space Complexity: O(1)
+
+27. Write a program to find the sum of each row of a matrix?
+
+class RowSum{
+static void sumOfRow(int matrix[][],int row, int col)
+{
+ int i, j;
+ int sum = 0;
+ for (i = 0; i < row; ++i) {
+  for (j = 0; j < col; ++j) {
+                                      //Calculating sum of elements in a row
+   sum = sum + matrix[i][j];
+  }
+  System.out.println(sum);
+                             //Reset sum after each row
+  sum = 0;
+ }
+}
+public static void main(String[] args)
+{
+                   //Input matrix
+ int[][] matrix = {{1,2,3,4},
+                   {5,6,7,8},
+                   {9,10,11,12},
+                   {13,14,15,16}};
+ sumOfRow(matrix,4,4);
+}
+}
+Output:
+
+10, 26, 42, 58
+Take variable sum to store the sum of the row. Start traversing the matrix and in each traversal calculate the sum of the row and then print it and then rest it.
+
+Time Complexity: O(m*n), we are traversing through the whole matrix so. Where m is the number of rows and n is the number of columns.
+Space Complexity: O(1)
